@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ayel!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <div class="bear-icon">
+            <img src="https://png.pngtree.com/png-clipart/20241111/original/pngtree-cute-teddy-png-image_16898395.png" alt="Beruang" style="width:85px; height:85px; border-radius:50%;">
+        </div>
+        <h1>🎉 Happy 19th Birthday! 🎂</h1>
+        <h2>Untuk: Ayel ❤️</h2>
+        <button class="btn" onclick="bukaSurat()" style="padding: 10px 20px; margin-top: 15px; cursor: pointer;">Klik dari Amiy ✨</button>
+    </div>
+
+    <div id="pop-up-surat" class="popup-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; z-index: 9999;">
+        <div style="background: #fffbeb; padding: 30px; border-radius: 20px; max-width: 400px; text-align: left; position: relative;">
+            <span onclick="tutupSurat()" style="position: absolute; top: 10px; right: 20px; font-size: 24px; cursor: pointer;">&times;</span>
+            <h3>Surat Spesial dari Amiy 💌</h3>
+            <p>Selamat ulang tahun yang ke-19, Ayel! Udah bukan bocil lagi secara hukum, tapi kalau ada kecoa tetep Amiy yang dikejar-kejar ya.</p>
+            <p>Semoga di umur 19 ini kamu makin bahagia, sehat terus, dan semua impianmu terwujud. Love you! 💖</p>
+        </div>
+    </div>
+
+    <audio id="lagu" src="birthday.mp3" loop></audio>
+
+    <script>
+        function bukaSurat() {
+            document.getElementById("pop-up-surat").style.display = "flex";
+            var audio = document.getElementById("lagu");
+            if (audio) {
+                audio.play().catch(function(error) {
+                    alert("Klik OK biar musiknya bunyi ya! 🎵");
+                    audio.play();
+                });
+            }
+        }
+        function tutupSurat() {
+            document.getElementById("pop-up-surat").style.display = "none";
+        }
+    </script>
+</body>
+</html>
